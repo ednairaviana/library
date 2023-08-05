@@ -14,34 +14,26 @@ html {
 body {
     background-color: #151515;
     font-family: 'Mali', cursive;
-}
 
-/*------- MAIN-HEADER -------*/
-
-.main-header {
-    width: 100vw;
-    height: 15vh;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.main-header h1 {
-    font-size: 1.8rem;
 }
 
 /*------- MAIN -------*/
 
 main {
     display: grid;
-    height: 85vh;
+    height: 100vh;
+    width: 100vw;
     grid-template-columns: 1fr 3fr;
     gap: 10px;
-    padding: 0 10px 10px;
+    padding: 10px;
 }
 
 main > * {
     border: 1px solid white;
+    border-radius: 10px;
 }
 
 /*------- FORM -------*/
