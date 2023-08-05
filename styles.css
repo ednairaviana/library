@@ -46,8 +46,20 @@ main > * {
 
 /* FORM */
 
+.form-container {
+    padding: 15px 20px;
+}
+
+.form-container h2 {
+    text-align: center;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
 .input-container {
     display: flex;
     flex-direction: column;
+    gap: 5px;
     margin-bottom: 13px;
 }
