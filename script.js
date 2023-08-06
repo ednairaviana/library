@@ -21,17 +21,33 @@ function createBookCard(title, author, pages) {
     const titleCard = document.createElement("h2");
     const authorCard = document.createElement("p");
     const pagesCard = document.createElement("p");
+    const divBtn = document.createElement("div");
+    const readBtn = document.createElement("p");
+    const delIcon = document.createElement("span");
+
+    bookCard.classList.add("book-card");
+    divBtn.classList.add("btn-card");
+    delIcon.classList.add("material-symbols-outlined");
 
     bookCard.insertAdjacentElement("beforeend", divText);
     divText.insertAdjacentElement("beforeend", titleCard);
     divText.insertAdjacentElement("beforeend", authorCard);
     divText.insertAdjacentElement("beforeend", pagesCard);
-    bookCard.classList.add("book-card");
-    bookContainer.insertAdjacentElement("beforeend", bookCard);
+
+    bookCard.insertAdjacentElement("beforeend", divBtn);
+    divBtn.insertAdjacentElement("beforeend", readBtn);
+    divBtn.insertAdjacentElement("beforeend", delIcon);
 
     titleCard.innerText = title;
     authorCard.innerText = author;
     pagesCard.innerText = `${pages} pages`;
+    readBtn.innerText = "read/not read";
+    delIcon.innerHTML = "delete";
+    bookContainer.insertAdjacentElement("beforeend", bookCard);
+
+    delIcon.addEventListener("click", () => {
+        bookCard.onclick = function(e) { this.parentNode.removeChild(this) };
+    })
 }
 
 function clearInput() {
@@ -63,16 +79,14 @@ function validateForm() {
     }
 }
 
-function Book(title, author, page, read) {
-    this.title
-    this.author
-    this.page
-    this.read
-    this.info = function() {
-        let readText = function() {
-            if(read == true) return "already read!" ;
-            else return "not read yet!";
-        }
-        return `${title} by ${author}, ${page} pages, ${readText()}`;
-    }
+function Book(title, author, page) {
+    this.title = title
+    this.author = author
+    this.page = page
 }
+
+const amor = new Book("amor", "amor", "amor");
+const love = new Book("amor", "amor", "amor");
+
+console.log(love);
+
