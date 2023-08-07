@@ -12,8 +12,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <main>
@@ -43,24 +43,30 @@
                 >
                 <span class="span" id="span-pages"></span>
             </div>
+            <div class="input-container radio">
+                <div>
+                    <input
+                        type="radio"
+                        id="read"
+                        name="status"
+                        checked
+                    >
+                    <label for="read">Read</label>
+                </div>
+                <div>
+                    <input 
+                        type="radio"
+                        id="not-read"
+                        name="status"
+                    >
+                    <label for="not-read">Not read</label>
+                </div>
+            </div>
             <button class="main-btn">Add</button>
         </div>
         <div class="library-container">
             <h1>LIBRARY</h1>
             <div class="book-container">
-                <div class="book-card">
-                    <div>
-                        <h2>Book Title</h2>
-                        <p>Author</p>
-                        <p>Pages</p>
-                    </div>
-                    <div class="btn-card">
-                        <p>read/not read</p>
-                        <span class="material-symbols-outlined">
-                            delete
-                        </span>
-                    </div>
-                </div>
             </div>
         </div>
     </main>
