@@ -1,0 +1,10 @@
+@media (max-width: 575px) {
+    main {
+        display: block;
+    }
+
+    .aside-grid {
+        position: absolute;
+        right: 0;
+    }
+}
