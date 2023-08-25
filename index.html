@@ -14,55 +14,62 @@
 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/media.css">
 </head>
 <body>
+    <div class="add-book">aa</div>
     <main>
-        <div class="form-container">
-            <h2>NEW BOOK</h2>
-            <div class="input-container">
-                <label for="title">Title</label>
-                <input 
-                    type="text"
-                    id="title"
-                >
-                <span class="span" id="span-title"></span>
-            </div>
-            <div class="input-container">
-                <label for="author">Author</label>
-                <input 
-                    type="text"
-                    id="author"
-                >
-                <span class="span" id="span-author"></span>
-            </div>
-            <div class="input-container">
-                <label for="pages">Pages</label>
-                <input 
-                    type="number"
-                    id="pages"
-                >
-                <span class="span" id="span-pages"></span>
-            </div>
-            <div class="input-container radio">
-                <div>
-                    <input
-                        type="radio"
-                        id="read"
-                        name="status"
-                        checked
-                    >
-                    <label for="read">Read</label>
-                </div>
-                <div>
+        <div class="aside-grid">
+            <div class="form-container">
+                <h2>NEW BOOK</h2>
+                <div class="input-container">
+                    <label for="title">Title</label>
                     <input 
-                        type="radio"
-                        id="not-read"
-                        name="status"
+                        type="text"
+                        id="title"
                     >
-                    <label for="not-read">Not read</label>
+                    <span class="span" id="span-title"></span>
                 </div>
+                <div class="input-container">
+                    <label for="author">Author</label>
+                    <input 
+                        type="text"
+                        id="author"
+                    >
+                    <span class="span" id="span-author"></span>
+                </div>
+                <div class="input-container">
+                    <label for="pages">Pages</label>
+                    <input 
+                        type="number"
+                        id="pages"
+                    >
+                    <span class="span" id="span-pages"></span>
+                </div>
+                <div class="input-container radio">
+                    <div>
+                        <input
+                            type="radio"
+                            id="read"
+                            name="status"
+                            checked
+                        >
+                        <label for="read">Read</label>
+                    </div>
+                    <div>
+                        <input 
+                            type="radio"
+                            id="not-read"
+                            name="status"
+                        >
+                        <label for="not-read">Not read</label>
+                    </div>
+                </div>
+                <button id="form-btn" class="main-btn">Add</button>
             </div>
-            <button class="main-btn">Add</button>
+            <div>
+                <button id="grid-btn" class="main-btn">Test Grid</button>
+            </div>
         </div>
         <div class="library-container">
             <h1>LIBRARY</h1>
