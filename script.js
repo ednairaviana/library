@@ -79,3 +79,80 @@ const form = (function() {
         }
     }
 })()
+
+const domFunctions = (function() {
+    const bookContainer = document.querySelector(".book-container");
+
+    function createBookCard(title, author, pages, read, idCard) {
+        const bookCard = document.createElement("div");
+        bookCard.classList.add("book-card");
+        bookContainer.insertAdjacentElement("beforeend", bookCard);
+        bookCard.setAttribute("data-id", idCard);
+    
+        bookCard.innerHTML = `
+            <div>
+                <h2 id="title-card"></h2>
+                <p id="author-card"></p>
+                <p id="pages-card"></p>
+            </div>
+            <div class="btn-card">
+                <p class="btn-read" style="background-color: green;">READ</p>
+                <span class="material-symbols-outlined">delete</span>
+            </div>`;
+    
+        const ttlCard = bookCard.querySelector("#title-card");
+        const authorCard = bookCard.querySelector("#author-card");
+        const pagesCard = bookCard.querySelector("#pages-card");
+        const btnRead = bookCard.querySelector(".btn-read")
+        const btnDelete = bookCard.querySelector("span");
+    
+        ttlCard.innerText = title;
+        authorCard.innerText = author;
+        pagesCard.innerText = `${pages} pages`;
+
+        changeBtnRead();
+
+        btnRead.addEventListener("click", () => {
+            bookCard.onclick = function(e) {
+                isRead(this.dataset.id);
+                read = library[this.dataset.id].read;
+                changeBtnRead();
+            }
+        });
+
+        btnDelete.addEventListener("click", () => {
+            bookCard.onclick = function(e) {
+                deleteBook(this.dataset.id);
+                renderBooks();
+            }
+        });
+
+        function changeBtnRead() {
+            if(read == true) {
+                btnRead.style.backgroundColor = "green";
+                btnRead.innerText = "READ";
+            } else {
+                btnRead.style.backgroundColor = "red";
+                btnRead.innerText = "NOT READ";
+            }
+        }
+    }
+
+    function renderBooks() {
+        while(bookContainer.firstChild) {
+            bookContainer.removeChild(bookContainer.firstChild);
+        }
+        for (i = 0; i < library.length; i++) {
+            createBookCard(library[i].title, library[i].author, library[i].pages, library[i].read, i);
+        }
+    }
+
+    return {renderBooks, createBookCard}
+})()
+
+const testGrid = (function() {
+    const gridbtn = document.querySelector("#grid-btn");
+    gridbtn.addEventListener("click", () => {
+        domFunctions.createBookCard("Title", "Author", "123", true);
+    });
+})();
