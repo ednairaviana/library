@@ -1,6 +1,6 @@
 @media (max-width: 575px) {
     .add-book {
-        display: block;
+        display: flex;
     }
 
     main {
@@ -11,5 +11,10 @@
         display: none;
         position: absolute;
         right: 0;
+        z-index: 10;
+    }
+
+    header h1 {
+        top: 15px;
     }
 }
