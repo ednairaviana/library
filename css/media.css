@@ -1,9 +1,14 @@
 @media (max-width: 575px) {
+    .add-book {
+        display: block;
+    }
+
     main {
         display: block;
     }
 
     .aside-grid {
+        display: none;
         position: absolute;
         right: 0;
     }

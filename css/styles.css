@@ -29,6 +29,7 @@ body {
 /*------- ADD-BOOK -------*/
 
 .add-book {
+    display: none;
     position: absolute;
     top: 30px;
     left: 30px;
